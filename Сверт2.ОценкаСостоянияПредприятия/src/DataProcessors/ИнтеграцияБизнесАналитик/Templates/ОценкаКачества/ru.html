@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta><title>Дашборд оценки услуг — Семейный курорт «Утёс»</title><style>
+    :root {
+      --green: #5AAE30;
+      --green-dark: #4A9528;
+      --green-light: #e8f5e0;
+      --green-bg: #f3faf0;
+      --orange: #E8792B;
+      --orange-light: #fff4ec;
+      --orange-dark: #d46a22;
+      --white: #ffffff;
+      --bg: #f5f7f2;
+      --surface: #ffffff;
+      --border: #e2e8d9;
+      --text: #2d3a2e;
+      --text-secondary: #6b7c6e;
+      --muted: #94a398;
+      --shadow-sm: 0 1px 3px rgba(45,58,46,0.06);
+      --shadow-md: 0 4px 16px rgba(45,58,46,0.08);
+      --radius: 14px;
+      --radius-sm: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, "Segoe UI", Tahoma, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Header / branding ───────────────────────────── */
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .header-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0.85rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand-logo {
+      font-weight: 800;
+      font-size: 1.65rem;
+      letter-spacing: 0.03em;
+      line-height: 1;
+    }
+    .brand-logo .l1 { color: #E8792B; }
+    .brand-logo .l2 { color: #5AAE30; }
+    .brand-logo .l3 { color: #E8C82B; }
+    .brand-logo .l4 { color: #2BAAE8; }
+    .brand-sub {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-top: 2px;
+    }
+    .header-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      box-shadow: var(--shadow-sm);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px rgba(90,174,48,0.5);
+      flex-shrink: 0;
+    }
+
+    .container { max-width: 1320px; margin: 0 auto; padding: 1.75rem 2rem 3rem; }
+
+    .page-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Metric cards grid ───────────────────────────── */
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    .card h2 {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-bottom: 0.65rem;
+    }
+    .card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.1;
+    }
+    .card .value-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      margin-bottom: 0.85rem;
+    }
+    .card-icon.green  { background: var(--green-light);  color: var(--green);  }
+    .card-icon.orange { background: var(--orange-light); color: var(--orange); }
+
+    /* ── Rooms list ──────────────────────────────────── */
+    .section-card { grid-column: 1 / -1; }
+    .rooms-list { list-style: none; }
+    .rooms-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.92rem;
+    }
+    .rooms-list li:last-child { border-bottom: none; }
+    .badge {
+      background: var(--green-light);
+      color: var(--green-dark);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .empty-row { color: var(--muted); font-style: italic; }
+
+    /* ── Negative feedback ───────────────────────────── */
+    .negative-feedback { margin-top: 1.5rem; }
+    .negative-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--orange);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.15rem;
+      margin-bottom: 0.85rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .negative-item .meta {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+    }
+    .negative-item .meta span {
+      display: inline-block;
+      margin-right: 0.85rem;
+    }
+    .negative-item .comment {
+      color: var(--text);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+    .negative-empty {
+      color: var(--muted);
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* ── Footer ──────────────────────────────────────── */
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    .footer a { color: var(--green); text-decoration: none; }
+  </style></head><body>
+
+  <!-- ── Header ─────────────────────────────────────── -->
+  <div class="header">
+    <div class="header-inner">
+      <div>
+        <div class="brand-logo">
+          <span class="l1">У</span><span class="l2">т</span><span class="l3">ё</span><span class="l4">с</span>
+        </div>
+        <div class="brand-sub">семейный курорт</div>
+      </div>
+      <span class="header-title">Дашборд оценки услуг</span>
+      <div class="status">
+        <span class="status-dot"></span>
+        <span>%statusText%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Main content ───────────────────────────────── -->
+  <div class="container">
+    <h1 class="page-title">Оценка качества услуг</h1>
+    <p class="subtitle">Период: %periodText%. Всего анкет: %totalCount%.</p>
+
+    <!-- Metric cards -->
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon green">★</div>
+        <h2>Сервис</h2>
+        <div class="value">%avgService%</div>
+        <div class="value-label">средняя оценка</div>
+      </div>
+      <div class="card">
+        <div class="card-icon orange">₽</div>
+        <h2>Цена</h2>
+        <div class="value">%avgCost%</div>
+        <div class="value-label">средняя оценка</div>
+      </div>
+      <div class="card">
+        <div class="card-icon green">✓</div>
+        <h2>Уборка</h2>
+        <div class="value">%avgCleaning%</div>
+        <div class="value-label">средняя оценка</div>
+      </div>
+      <div class="card">
+        <div class="card-icon orange">◉</div>
+        <h2>Ресепшн</h2>
+        <div class="value">%avgReception%</div>
+        <div class="value-label">средняя оценка</div>
+      </div>
+      <div class="card">
+        <div class="card-icon green">●</div>
+        <h2>Еда</h2>
+        <div class="value">%avgFood%</div>
+        <div class="value-label">средняя оценка</div>
+      </div>
+      <div class="card">
+        <div class="card-icon orange">■</div>
+        <h2>Зона обслуживания</h2>
+        <div class="value">%avgZone%</div>
+        <div class="value-label">средняя оценка</div>
+      </div>
+    </div>
+
+    <!-- Room numbers -->
+    <div class="grid" style="margin-top:1.5rem; grid-template-columns: 1fr;">
+      <div class="card section-card">
+        <h2>Номера комнат</h2>
+        <ul class="rooms-list">
+          %roomsList%
+        </ul></div>
+    </div>
+
+    <!-- Negative feedback -->
+    <div class="card negative-feedback">
+      <h2>Негативные отзывы</h2>
+      <p class="subtitle" style="margin-bottom:0.75rem">Текстовые комментарии к низким оценкам (1–2 из 5)</p>
+      <div>
+        %negativeBlock%
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Footer ─────────────────────────────────────── -->
+  <div class="footer">
+    Семейный курорт «Утёс» · Дашборд оценки услуг · <a href="https://utes-resort.ru">utes-resort.ru</a>
+  </div>
+
+</body></html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d4c3b2a1-9876-5432-1098-76543210fedc">
+  <producedTypes>
+    <objectType typeId="c0a1b2c3-d4e5-4678-f901-234567890abc" valueTypeId="c0a1b2c3-d4e5-4678-f901-234567890abd"/>
+    <managerType typeId="d1e2f3a4-b5c6-4789-d012-3456789abcde" valueTypeId="d1e2f3a4-b5c6-4789-d012-3456789abcdf"/>
+  </producedTypes>
+  <name>ОценкаСостоянияПредприятия_РасчетОборотныхПоказателей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет оборотных показателей (бух. баланс)</value>
+  </synonym>
+  <comment>Суммы по регистру бухгалтерии Хозрасчетный и плану счетов для анализа ликвидности и раздела II баланса (методика упрощенная, по счетам Плана счетов РФ).</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ОценкаСостоянияПредприятия_РасчетОборотныхПоказателей.Form.Форма</defaultForm>
+  <forms uuid="b1c2d3e4-f5a6-4789-b012-c3d4e5f60789">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

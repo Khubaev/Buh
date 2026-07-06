@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cfb47809-b3f7-479c-8ea6-aadc1c053ca2">
+  <producedTypes>
+    <selectionType typeId="2dbefea8-6d21-4797-a8b5-d2980100bc59" valueTypeId="081b39b0-953e-4c7c-a1a6-68058eda04b3"/>
+    <listType typeId="0671e8c4-8e2a-466b-9742-7d6437b86eb3" valueTypeId="476cc5d9-c6ac-4b1a-a47c-9a0dd49a466e"/>
+    <managerType typeId="f1df7366-910d-423d-b462-7427531457e2" valueTypeId="0af1f78d-2c2a-4ad3-87db-63996b514c82"/>
+    <recordSetType typeId="15c63ea4-b836-43c0-9d91-a3ce63452336" valueTypeId="b7e49a91-f64f-4eb9-8056-ec8b85158927"/>
+    <recordKeyType typeId="58955c63-a8c1-44cc-ae1e-c15916d3c3b3" valueTypeId="73cfb8d2-1a83-47bc-aeb5-b4edfd5f9297"/>
+    <recordType typeId="0ff2d8b6-70ff-41d0-bb50-5090787b1722" valueTypeId="822038f5-fd75-4922-8a5e-07eb62643fca"/>
+    <recordManagerType typeId="f34fffba-8e84-4a69-84c1-63060968086c" valueTypeId="3920fdbb-c55e-4f2f-88b2-735b7089c5e4"/>
+  </producedTypes>
+  <name>ПоказателяДляОценкиСостояния</name>
+  <synonym>
+    <key>ru</key>
+    <value>Показателя для оценки состояния</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6d16f19d-67fb-4960-9923-52ebc1ad5d79">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>12</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="e3117d4a-ac65-4c68-a564-ac0322a679a3">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="763b65db-3fd5-4e54-80c9-a414188d3b33">
+    <name>Показатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Показатели</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

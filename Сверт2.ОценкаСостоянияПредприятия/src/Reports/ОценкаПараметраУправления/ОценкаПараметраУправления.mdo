@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b3c4d5e6-f7a8-4901-d444-555566667777">
+  <producedTypes>
+    <objectType typeId="e6f7a8b9-c0d1-4123-8f77-8899aabbccdd" valueTypeId="f7a8b9c0-d1e2-4234-9078-99aabbccddee"/>
+    <managerType typeId="a8b9c0d1-e2f3-4345-a189-aabbccddeeff" valueTypeId="b9c0d1e2-f3a4-4456-b29a-bbccddeeff00"/>
+  </producedTypes>
+  <name>ОценкаПараметраУправления</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оценка параметра управления</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <mainDataCompositionSchema>Report.ОценкаПараметраУправления.Template.ОсновнаяСхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <templates uuid="c4d5e6f7-a8b9-4012-e555-666677778888">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="d5e6f7a8-b9c0-4123-f666-777788889999">
+    <name>ОценкаПараметраУправления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оценка параметра управления</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Report>

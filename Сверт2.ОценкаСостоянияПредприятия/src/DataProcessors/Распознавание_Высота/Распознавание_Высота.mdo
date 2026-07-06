@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0734fae1-79a7-4a4c-be3b-e804f2acaa3a">
+  <producedTypes>
+    <objectType typeId="93ffc5ce-e546-43ce-a67b-d71296c2c0a8" valueTypeId="8f926bb7-104a-4c61-b83d-ed2367ce507a"/>
+    <managerType typeId="9d33a960-2c21-46a1-a1df-e70ee27dde7d" valueTypeId="38e73378-ba61-4508-8a4f-190b325cefcc"/>
+  </producedTypes>
+  <name>Распознавание_Высота</name>
+  <synonym>
+    <key>ru</key>
+    <value>Распознавание_Высота</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.Распознавание_Высота.Form.Форма</defaultForm>
+  <forms uuid="1b396dff-17a4-482d-86ed-f51ba2ba4d46">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9f3a7050-42ac-4a11-a4b7-c70c5422caa8">
+    <name>ФормаОтправки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Файлы для отправки</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="83f4ef28-0c07-4f96-af5c-24ef976246be">
+    <name>ФормаСозданияДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создание документов</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d4e5f6a7-b8c9-4012-d345-6789abcdef01">
+    <name>ФормаВыбораТипаСоздаваемогоДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор типа документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="5da3f980-5033-44a8-8e5a-a0ada8419c96">
+    <name>ФормаНастройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройки</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c8f4a2b1-6d3e-4f91-9a7c-2e5b8d1f3046">
+    <name>ФормаСопоставленияНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сопоставления номенклатуры</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="116fb57e-6559-444e-9187-b029125324eb">
+    <name>ПФ_DOC_Макет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет DOC</value>
+    </synonym>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="bae7ba77-c032-4aa7-bcbd-5cf55f116a22">
+    <name>ШаблонНастроек</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон настроек</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c42bd8a9-33fb-4e38-b317-f800446b4dbc">
+  <producedTypes>
+    <objectType typeId="8fc6ca7f-a9e2-4fba-bfc5-2ac94181d169" valueTypeId="bb639213-f3e8-4142-a195-6a645cd24f0b"/>
+    <managerType typeId="8a41974a-669e-48dc-9cc5-bd8a796e3e3f" valueTypeId="22491cee-897a-4316-a4f2-6ebc644aae48"/>
+  </producedTypes>
+  <name>ЗагрузкаСветлячокTLПроживание</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка светлячок TLПроживание</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ЗагрузкаСветлячокTLПроживание.Form.Форма</defaultForm>
+  <attributes uuid="978862c9-2567-4dcb-96f4-742830133147">
+    <name>ИмяФайла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя файла</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="4148840d-da5b-4e20-9c25-9e307dbe839e">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

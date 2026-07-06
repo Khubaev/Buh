@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="41be6342-82e0-4d58-997d-2a1450178b75">
+  <producedTypes>
+    <objectType typeId="8da524ad-4227-473f-964d-95bce627fdb1" valueTypeId="426a41cf-ea5c-457b-860a-68690c1ee578"/>
+    <managerType typeId="59af70ff-1709-4f68-bd24-470ccfe663cc" valueTypeId="e83808eb-7c4e-4475-8cba-995dc7d87a95"/>
+  </producedTypes>
+  <name>ИнтеграцияБизнесАналитик</name>
+  <synonym>
+    <key>ru</key>
+    <value>Интеграция бизнес аналитик</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ИнтеграцияБизнесАналитик.Form.Форма</defaultForm>
+  <forms uuid="f9b02c3d-2359-40e7-b999-f07f1923a707">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b36822f0-3f51-4c08-8bc4-5cbef91c6180">
+    <name>ФормаСправка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма справка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e41750f7-5208-47c9-8f88-e58eacefcf35">
+    <name>ФормаКачества</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма качества</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="def9571d-a0ef-4ce4-87d5-6ded81e5dc08">
+    <name>Макет_ID_Показателей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет i d показателей</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="92537e6e-11f1-46de-beac-09bd1e89f276">
+    <name>Макет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет</value>
+    </synonym>
+  </templates>
+  <templates uuid="aebb28c4-f917-4201-9037-fc613148e2c3">
+    <name>справка_ОценкаСостоянияПредприятия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Справка оценка состояния предприятия</value>
+    </synonym>
+    <templateType>HTMLDocument</templateType>
+  </templates>
+  <templates uuid="b8d0fecf-465d-4f52-ae3f-778bb13f182d">
+    <name>ОценкаКачества</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оценка качества</value>
+    </synonym>
+    <templateType>HTMLDocument</templateType>
+  </templates>
+  <commands uuid="c0d2f430-27f4-4640-9d26-781aa331c41d">
+    <name>ОценкаКачества</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оценка качества услуг</value>
+    </synonym>
+    <group>ActionsPanelReports</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

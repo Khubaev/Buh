@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a1b2c3d4-e5f6-4789-a111-222233334444">
+  <producedTypes>
+    <objectType typeId="d4e5f6a7-b8c9-4012-8d6e-abcdef123456" valueTypeId="e5f6a7b8-c9d0-4789-a123-456789abcdef"/>
+    <managerType typeId="f6a7b8c9-d0e1-4890-b234-56789abcdef0" valueTypeId="a7b8c9d0-e1f2-4901-c345-6789abcdef01"/>
+  </producedTypes>
+  <name>ОценкаРентабельности</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оценка рентабельности</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <mainDataCompositionSchema>Report.ОценкаРентабельности.Template.ОсновнаяСхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <templates uuid="b2c3d4e5-f6a7-4890-b222-333344445555">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="c3d4e5f6-a7b8-4901-c333-444455556666">
+    <name>ОценкаРентабельности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оценка рентабельности</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Report>

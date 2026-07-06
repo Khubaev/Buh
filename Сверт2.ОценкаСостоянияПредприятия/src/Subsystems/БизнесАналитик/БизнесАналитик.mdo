@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="92574f51-e403-4c6d-8aa2-7873e932a669">
+  <name>БизнесАналитик</name>
+  <synonym>
+    <key>ru</key>
+    <value>ИС Оценка Курорта</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <picture xsi:type="core:PictureRef">
+    <picture>CommonPicture.ОценкаСостоянияКурорта</picture>
+  </picture>
+  <content>DataProcessor.ИнтеграцияБизнесАналитик</content>
+  <content>DataProcessor.ОценкаСостоянияПредприятия_РасчетОборотныхПоказателей</content>
+  <content>InformationRegister.ПоказателяДляОценкиСостояния</content>
+  <content>Report.ДинамикаПоказателейДляОтчета</content>
+  <content>Report.ОценкаЛиквидности</content>
+  <content>Report.ОценкаРентабельности</content>
+  <content>Report.ОценкаПараметраУправления</content>
+  <content>Report.СверкаОСВ10ИМПЗНаСкладах</content>
+  <subsystems>Справочники</subsystems>
+  <subsystems>Документы</subsystems>
+  <subsystems>Настройки</subsystems>
+</mdclass:Subsystem>

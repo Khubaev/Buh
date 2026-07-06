@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1674d786-8599-40b6-a2cf-58c7c09a8fb3">
+  <producedTypes>
+    <objectType typeId="defb42b4-7492-4f5b-81cb-d8febb94c37c" valueTypeId="0307bae9-524c-4de5-b717-c4098d1f4dbc"/>
+    <refType typeId="03122d2b-5a7c-482f-9936-d1f380e144a1" valueTypeId="09917f82-604e-4828-a284-e52b9162b1f3"/>
+    <selectionType typeId="10928aa2-ad9e-4dcc-bb2a-2cb939bb93b8" valueTypeId="0970c62f-58d3-4b97-a6c2-c99903045283"/>
+    <listType typeId="dd169723-fe9f-4262-a03f-6ae59cbd1206" valueTypeId="1cae30ef-061c-4779-a8cf-8395d81d7c5b"/>
+    <managerType typeId="02137969-0918-44a5-89e3-003100a8e706" valueTypeId="2104febc-34d4-47cd-9ae7-15be512b9fed"/>
+  </producedTypes>
+  <name>Показатели</name>
+  <synonym>
+    <key>ru</key>
+    <value>Показатели</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Показатели.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.Показатели.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>100</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="27e6bd9a-6826-4a3b-aea4-efe41c902d0b">
+      <name>ADR</name>
+      <description>ADR(ср.стоимость номера)</description>
+      <code xsi:type="core:StringValue">
+        <value>000000036</value>
+      </code>
+    </items>
+    <items id="d350be5c-5cda-4459-9f3e-ac70a10d227d">
+      <name>Выручка</name>
+      <description>Выручка</description>
+      <code xsi:type="core:StringValue">
+        <value>000000008</value>
+      </code>
+    </items>
+    <items id="377e0453-3a5f-4e78-a1a3-52f73a3a4771">
+      <name>ВысоколиквидныеЦенныеБумаги</name>
+      <description>Высоколиквидные ценные бу</description>
+      <code xsi:type="core:StringValue">
+        <value>000000004</value>
+      </code>
+    </items>
+    <items id="a42f7a86-f548-4cea-8f6f-a8455bbbd539">
+      <name>ДенежныеСредства</name>
+      <description>Денежные средства</description>
+      <code xsi:type="core:StringValue">
+        <value>000000003</value>
+      </code>
+    </items>
+    <items id="c5273413-988e-4cf9-92d4-ce327569414d">
+      <name>КраткосрочнаяДебиторскаяЗадолженность</name>
+      <description>Краткосрочная дебиторская</description>
+      <code xsi:type="core:StringValue">
+        <value>000000005</value>
+      </code>
+    </items>
+    <items id="cb16c767-cb01-4e74-9c0e-affcbb99d3ad">
+      <name>КраткосрочныеОбязательства</name>
+      <description>Краткосрочные обязательст</description>
+      <code xsi:type="core:StringValue">
+        <value>000000002</value>
+      </code>
+    </items>
+    <items id="f48cc456-ae47-4b7d-8487-263cd242e56c">
+      <name>КраткосрочныеФинВложения</name>
+      <description>Краткосрочные фин вложени</description>
+      <code xsi:type="core:StringValue">
+        <value>000000006</value>
+      </code>
+    </items>
+    <items id="7096a984-717e-4a75-8caf-1b44bbd4d745">
+      <name>ОборотныеАктивы</name>
+      <description>Оборотные активы</description>
+      <code xsi:type="core:StringValue">
+        <value>000000001</value>
+      </code>
+    </items>
+    <items id="97b700ab-32aa-4318-91b2-f7196a52c883">
+      <name>ОсновныеСредства</name>
+      <description>Основные средства</description>
+      <code xsi:type="core:StringValue">
+        <value>000000014</value>
+      </code>
+    </items>
+    <items id="ccde5bf9-a87f-4d26-9663-328db4cf6980">
+      <name>ОценкаКлининга</name>
+      <description>Оценка клининга</description>
+      <code xsi:type="core:StringValue">
+        <value>000000037</value>
+      </code>
+    </items>
+    <items id="24358348-f713-4a85-8454-7b46661b585d">
+      <name>ОценкаПитания</name>
+      <description>Оценка питания</description>
+      <code xsi:type="core:StringValue">
+        <value>000000038</value>
+      </code>
+    </items>
+    <items id="ef29a0a5-4dcc-47b1-8b5d-548a5215c914">
+      <name>ОценкаРесепшен</name>
+      <description>Оценка ресепшен</description>
+      <code xsi:type="core:StringValue">
+        <value>000000039</value>
+      </code>
+    </items>
+    <items id="1f4ca416-8117-405a-b9eb-c613d4ec6e51">
+      <name>План</name>
+      <description>План</description>
+      <code xsi:type="core:StringValue">
+        <value>000000041</value>
+      </code>
+    </items>
+    <items id="82d56bce-fd11-4075-8106-2def76577628">
+      <name>ПрибыльДоНалогообложения</name>
+      <description>Прибыль до налогообложени</description>
+      <code xsi:type="core:StringValue">
+        <value>000000013</value>
+      </code>
+    </items>
+    <items id="98139199-6a6d-4158-bc16-6d8aefb435b8">
+      <name>ПроцентЗагрузки</name>
+      <description>Процент загрузки</description>
+      <code xsi:type="core:StringValue">
+        <value>000000043</value>
+      </code>
+    </items>
+    <items id="c6ca2efc-95f3-494b-80b5-aa35f183117d">
+      <name>СобственныйКапитал</name>
+      <description>Собственный капитал</description>
+      <code xsi:type="core:StringValue">
+        <value>000000010</value>
+      </code>
+    </items>
+    <items id="e32bfb2e-3a97-4fdb-9084-3d4f87878a0c">
+      <name>СреднегодСтоимостьОборАктивов</name>
+      <description>Среднегод ст-ть обор акти</description>
+      <code xsi:type="core:StringValue">
+        <value>000000012</value>
+      </code>
+    </items>
+    <items id="55d1c15c-2925-41fe-affe-01a9f21dc60e">
+      <name>СреднееВремяПребывания</name>
+      <description>Среднее время пребывания</description>
+      <code xsi:type="core:StringValue">
+        <value>000000045</value>
+      </code>
+    </items>
+    <items id="3c330344-c989-4a1f-9e2e-3a52ead89ea9">
+      <name>СредняяВыручкаНаГостя</name>
+      <description>Средняя выручка гостя</description>
+      <code xsi:type="core:StringValue">
+        <value>000000044</value>
+      </code>
+    </items>
+    <items id="bc431326-5cef-4559-95ac-e11de0fd013b">
+      <name>СтоимостьАктивов</name>
+      <description>Стоимость активов</description>
+      <code xsi:type="core:StringValue">
+        <value>000000011</value>
+      </code>
+    </items>
+    <items id="384e8ff7-a2d0-41b1-8ff1-075d7722b43c">
+      <name>ТекущиеОбязательства</name>
+      <description>Текущие обязательства</description>
+      <code xsi:type="core:StringValue">
+        <value>000000007</value>
+      </code>
+    </items>
+    <items id="943edea5-7b3a-4bbf-81d7-fd4da0ee9f8f">
+      <name>Факт</name>
+      <description>Факт</description>
+      <code xsi:type="core:StringValue">
+        <value>000000042</value>
+      </code>
+    </items>
+    <items id="2d820f49-9864-47d3-b478-1ad8ea383c32">
+      <name>ЧистаяПрибыль</name>
+      <description>Чистая прибыль</description>
+      <code xsi:type="core:StringValue">
+        <value>000000009</value>
+      </code>
+    </items>
+    <items id="1b8bb2e2-281d-4446-89f4-66517bceca86">
+      <name>ОценкаСтоимостьУслуг</name>
+      <description>Оценка стоимость услуг</description>
+      <code xsi:type="core:StringValue">
+        <value>000000046</value>
+      </code>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultListForm>Catalog.Показатели.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="74675f5f-5c6f-4670-9fe7-be9ad59edf10">
+    <name>СтрокиБаланса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Строки баланса</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5fc476ac-d203-4c44-b040-dac7a06851d7">
+    <name>КодFireBird</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код fire bird</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="d6b07ca3-df3a-4550-a911-25d318c744a8">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="759dbd15-ff09-45d9-b539-efe22e4f40ad" extendedConfigurationObject="37ec4311-be9a-4853-a06f-4bfc21e493a5">
+  <producedTypes>
+    <objectType typeId="b6daf78e-8e02-4873-a2dc-4bdd7946acf5" valueTypeId="af712bef-5eab-4234-8cb7-bc0aef537ced"/>
+    <refType typeId="5e9c2c94-2004-4573-8afe-e57730aacb54" valueTypeId="e57fde47-3c9a-47a0-89e0-ce06dd45f1d3"/>
+    <selectionType typeId="239ae0f9-ea53-4062-934e-ad34b0adb27d" valueTypeId="72d21a80-855e-4950-a4d2-c7aaa25200b9"/>
+    <listType typeId="ac13c785-0f4c-46c0-9415-cd938802401f" valueTypeId="cd3ec15d-1a6e-4c2b-9e4c-ddd63ee9c996"/>
+    <managerType typeId="50a98774-c119-493a-8857-21fc2efc2284" valueTypeId="c111d1bc-59dd-457c-acf6-90b4a68dca8f"/>
+  </producedTypes>
+  <name>ПоступлениеТоваровУслуг</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:DocumentExtension">
+    <extendedConfigurationObject>Checked</extendedConfigurationObject>
+  </extension>
+  <forms uuid="cd7c997a-0aa7-472a-93f0-b4b8853b44e2" extendedConfigurationObject="2acab184-ce8d-4890-8df2-b354540c443d">
+    <name>ФормаДокументаУслуги</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFormExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <form>Extended</form>
+    </extension>
+  </forms>
+</mdclass:Document>

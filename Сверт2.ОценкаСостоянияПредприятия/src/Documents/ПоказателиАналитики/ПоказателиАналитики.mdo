@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7ba73d15-828d-424c-992f-d399c11e829a">
+  <producedTypes>
+    <objectType typeId="fdd9ebe6-de56-494d-bafe-e8ebc8de0703" valueTypeId="98ecb87b-ac6e-4244-9ac4-d8597f5d8ee9"/>
+    <refType typeId="527548ad-fa4b-4a66-8b08-c11ac05ca3b5" valueTypeId="1eaa4bf2-7f27-4962-b8d9-98c32a6285db"/>
+    <selectionType typeId="c7ed4b68-a0b0-4ed0-892e-f2deaaa260b2" valueTypeId="119c7c91-d04f-4796-ab73-65374b55ae94"/>
+    <listType typeId="3f63ec74-f30d-4e73-a1d3-740f27fd8070" valueTypeId="c12d9f12-0bc3-4c7a-83e1-f25ff8ddae87"/>
+    <managerType typeId="3ca75ce3-8a3b-40fc-8fc9-479298c46e9e" valueTypeId="b7e3aa4d-6b87-4f5e-bcb5-39fdbd18e28e"/>
+  </producedTypes>
+  <name>ПоказателиАналитики</name>
+  <synonym>
+    <key>ru</key>
+    <value>Показатели аналитики</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ПоказателиАналитики.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ПоказателиАналитики.Form.ФормаДокумента</defaultObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecords>InformationRegister.ПоказателяДляОценкиСостояния</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="89ce51b9-b539-4cfd-acb0-05c1f4ab203d">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="9e80d71c-ba68-4f12-93e4-f26ba84aa8e2">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="7164d26c-3428-438c-b2b8-472cf0109f07">
+    <producedTypes>
+      <objectType typeId="6297d5c0-f3f7-457c-90d8-0a122b469a63" valueTypeId="b6fb0ac0-89e1-4390-9f99-76cb60895a4a"/>
+      <rowType typeId="1e4e6672-b0d8-4ebd-9393-5a295a3103a6" valueTypeId="f46a1ad9-8321-4d96-8744-0b218da12d55"/>
+    </producedTypes>
+    <name>Показатели</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатели</value>
+    </synonym>
+    <attributes uuid="1b4182f9-29f4-4777-bb8d-9557735f4322">
+      <name>Показатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Показатель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Показатели</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="18862a1f-5fa5-4d74-a298-1fbd358393ff">
+      <name>Формула</name>
+      <synonym>
+        <key>ru</key>
+        <value>Формула</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="469c19b2-f6e1-4aad-a5df-cd91d971917c">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>12</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <lineNumberLength>9</lineNumberLength>
+  </tabularSections>
+</mdclass:Document>

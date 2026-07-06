@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9dfc3f3e-846c-4be8-ba9c-076420a2a733">
+  <producedTypes>
+    <objectType typeId="455a78b0-85e1-43f8-b777-a2bc1a937b42" valueTypeId="0b146277-25f5-499e-ae28-ee149ecef422"/>
+    <refType typeId="7e679c5c-b03b-4d2c-989a-688a47edb6eb" valueTypeId="35c91a5e-402a-4648-b295-aca4b71e1c66"/>
+    <selectionType typeId="8a1025c0-f918-4f1d-b803-8329366a9703" valueTypeId="eda27f07-8573-49d1-8f4c-24e2d19a8f0a"/>
+    <listType typeId="21d9c68b-9f24-4be4-8a1d-e175182d8a74" valueTypeId="67648e33-5725-475f-bedf-176ce4333ce1"/>
+    <managerType typeId="c1de7945-928b-4ff7-b578-b093b62cb354" valueTypeId="591151ca-f23b-4812-8697-6605733df1ea"/>
+  </producedTypes>
+  <name>ОценкиБА</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оценки БА</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ОценкиБА.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ОценкиБА.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <hierarchical>true</hierarchical>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="92903925-cf91-4e00-af69-0943c2734c8e">
+    <name>Описание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <multiLine>true</multiLine>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a5ee7afb-d83b-4077-bb01-6e2e14e70be3">
+    <name>ВыводитьВОтчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выводить в отчет</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4858f016-c0e0-4be8-bfd5-024ffd2ca992">
+    <name>ОсновнойПоказатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основной показатель</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2e70dc3d-bcc4-4d5e-aca3-6e5b3017fa62">
+    <name>НомерПоПорядку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер по порядку</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

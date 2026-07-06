@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="73cc8254-9f27-471a-b8e1-ce4b60b9da4e">
+  <producedTypes>
+    <selectionType typeId="8d78fa29-766a-445f-a45d-39a56ca48e35" valueTypeId="c6583404-9274-4968-8144-318bb329cadf"/>
+    <listType typeId="2d9fd473-1d4a-4df1-b8bc-f77adf3b8efd" valueTypeId="3ef560bd-e2fd-4925-9d96-5afe4e2493c8"/>
+    <managerType typeId="9b039139-d5f5-4bb4-ac6d-ffee0e425551" valueTypeId="1675ce40-fea4-4028-842b-b4b863c234d0"/>
+    <recordSetType typeId="3b8ce247-9ee5-48ce-8be1-eec1785fad0e" valueTypeId="9274a7e5-282a-4f13-965d-659b5926a319"/>
+    <recordKeyType typeId="2a53e0e5-bbe3-4e7c-94a7-9b53e6ace884" valueTypeId="1fcbd248-f291-4a7f-8b68-2d9ad0917556"/>
+    <recordType typeId="020d237a-e89b-4118-bda3-81586609982d" valueTypeId="fa7fdd19-b5f6-475b-bddc-fb2c8c2e7bbc"/>
+    <recordManagerType typeId="3ecda211-fbdd-4bba-afa0-6c0828da0e86" valueTypeId="dbc5904b-9573-44c0-9a28-0c93f8e260fa"/>
+  </producedTypes>
+  <name>НастройкиИнтеграции</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройки интеграции</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.НастройкиИнтеграции.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.НастройкиИнтеграции.Form.ФормаЗаписи</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="45a77267-fbd2-41bf-b50f-06e18763518d">
+    <name>ПутьДоБазы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Путь до базы</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>250</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="e1247443-59ee-41b7-8f21-0d19d73a1433">
+    <name>Пароль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пароль</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="8d8a6b1c-970e-4872-85cd-6ecedb916a12">
+    <name>ГУИД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ГУИД</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="7218d591-b0a4-4d2a-94aa-0663b5961f50">
+    <name>ДрайверКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Драйвер клиента</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>300</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="866a0af8-bca3-4c57-8ec9-07afefcd4404">
+    <name>Кодировка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кодировка</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <forms uuid="a68d0935-1dc8-4af5-8d17-f98bde3494cc">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

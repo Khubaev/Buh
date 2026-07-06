@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1ec28f09-8cba-4300-8ae4-813d93b17048">
+  <producedTypes>
+    <selectionType typeId="487440ab-4219-4d4e-9b88-a2457061c953" valueTypeId="9705147e-4080-450b-b8fe-f579cf6fd5ec"/>
+    <listType typeId="4e64bcdf-b203-40cb-8693-66dccd2a9b2e" valueTypeId="d02ae6e9-596f-4c72-9a83-47cd8d6bc68a"/>
+    <managerType typeId="bff6e7ae-d81c-4be7-84fb-e501ac21e33d" valueTypeId="08097a66-d5ac-496b-b6a7-ef16107668e2"/>
+    <recordSetType typeId="3558512a-b566-4133-a810-a78064ee65a7" valueTypeId="3e282ea1-f63a-4e46-bf44-607fb77f0a5e"/>
+    <recordKeyType typeId="daa5eae0-0987-4240-810e-1408420649b6" valueTypeId="86c6ce3a-205f-4d0f-8de9-798d55ba7665"/>
+    <recordType typeId="59e0772d-91f6-4ca7-a703-b1846158ff00" valueTypeId="b4f9854e-e3cc-403c-a393-0e445b786af8"/>
+    <recordManagerType typeId="1b5ecb96-7389-4824-8cbc-03734059a7c0" valueTypeId="f874d2c0-8521-449e-8c5b-867307d03f00"/>
+  </producedTypes>
+  <name>ПоказателиДляОтчета</name>
+  <synonym>
+    <key>ru</key>
+    <value>Показатели для отчета</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="0884ffe8-30ca-4e5c-b551-653cd792327d">
+    <name>Оценка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оценка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="211b314e-8757-4ce0-985c-f764e2dc6441">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="78c0dab3-22c0-44c4-ab69-0373c9ccd0b1">
+    <name>Показатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ОценкиБА</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta><title>Анализ финансовых показателей</title><style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+    color: #1a202c;
+    padding: 24px 16px;
+    min-height: 100vh;
+  }
+  .container { max-width: 1280px; margin: 0 auto; }
+
+  .header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    padding: 28px 32px;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.2);
+  }
+  .header h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+  .header p { font-size: 14px; opacity: 0.9; }
+  .header .org { font-size: 13px; opacity: 0.8; margin-top: 8px; }
+
+  .total-score {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .total-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .total-circle .value { font-size: 32px; }
+  .total-circle .label { font-size: 11px; opacity: 0.9; margin-top: 4px; text-align: center; }
+  .total-info h2 { font-size: 18px; color: #1e3a8a; margin-bottom: 8px; }
+  .total-info p { font-size: 13px; color: #4b5563; }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 32px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #3b82f6;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border-left: 5px solid #3b82f6;
+    position: relative;
+  }
+  .card-liquidity { border-left-color: #06b6d4; }
+  .card-profit    { border-left-color: #10b981; }
+  .card-hotel     { border-left-color: #f59e0b; }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .value-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 14px 0;
+    gap: 12px;
+  }
+  .actual-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e3a8a;
+  }
+  .actual-value.empty { color: #cbd5e0; font-size: 18px; }
+  .actual-value .unit { font-size: 14px; color: #64748b; font-weight: 500; margin-left: 4px; }
+
+  .score-badge {
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    min-width: 90px;
+  }
+  .score-0   { background: #fee2e2; color: #991b1b; }
+  .score-25  { background: #fed7aa; color: #9a3412; }
+  .score-50  { background: #fef3c7; color: #92400e; }
+  .score-75  { background: #d1fae5; color: #065f46; }
+  .score-100 { background: #bbf7d0; color: #14532d; }
+  .score-na  { background: #f1f5f9; color: #64748b; }
+
+  .score-label { display: block; font-size: 10px; font-weight: 600; opacity: 0.8; }
+  .score-num   { display: block; font-size: 18px; margin-top: 2px; }
+
+  .norm-info {
+    background: #f8fafc;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 12px;
+    color: #475569;
+    margin-top: 10px;
+  }
+  .norm-info b { color: #1e3a8a; }
+
+  .indicator-bar {
+    position: relative;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    margin: 12px 0 6px;
+    overflow: visible;
+  }
+  .indicator-zone {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(to right, #fef3c7, #d1fae5, #fef3c7);
+    border-radius: 4px;
+  }
+  .indicator-marker {
+    position: absolute;
+    top: -4px;
+    width: 4px;
+    height: 16px;
+    background: #1e3a8a;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: left 0.5s ease;
+  }
+  .indicator-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94a3b8;
+  }
+
+  .updated-info {
+    text-align: center;
+    margin-top: 24px;
+    padding: 12px;
+    color: #64748b;
+    font-size: 12px;
+    background: white;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 640px) {
+    .total-score { flex-direction: column; text-align: center; }
+    .cards-grid { grid-template-columns: 1fr; }
+  }
+</style></head><body>
+<div class="container">
+
+  
+<div class="header">
+    
+<h1>Анализ финансовых показателей</h1>
+    
+<p>Автоматический расчёт оценки по шкале 0–1 (курортные нормы для ALOS)</p>
+    
+<div class="org">Организация: <b id="org-name">—</b> · Период: <b id="period">—</b></div>
+  </div>
+
+  
+<div class="total-score">
+    
+<div class="total-circle" id="total-circle" style="background: #cbd5e0;">
+      <span class="value" id="total-value">—</span>
+      <span class="label" id="total-label">не рассчитано</span>
+    </div>
+    
+<div class="total-info">
+      
+<h2 id="total-title">Итоговая оценка предприятия</h2>
+      
+<p id="total-comment">Загрузите данные из 1С, чтобы увидеть результат анализа</p>
+    </div>
+  </div>
+
+  
+<h2 class="section-title">Коэффициенты ликвидности</h2>
+  
+<div class="cards-grid">
+
+    
+<div class="card card-liquidity" data-key="current_ratio" data-min="1.5" data-max="2.5">
+      
+<div class="card-title">Коэффициент текущей ликвидности</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 40%; right: 30%;"></div></div>
+      
+<div class="indicator-labels"><span>0</span><span>1,5</span><span>2,5</span><span>3,75+</span></div>
+      
+<div class="norm-info">Норма: <b>1,5 – 2,5</b>. Ниже 1,0 — риск, выше 3,0 — неэффективно</div>
+    </div>
+
+    
+<div class="card card-liquidity" data-key="quick_ratio" data-min="0.7" data-max="1.0">
+      
+<div class="card-title">Коэффициент быстрой ликвидности</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 46%; right: 33%;"></div></div>
+      
+<div class="indicator-labels"><span>0</span><span>0,7</span><span>1,0</span><span>1,5+</span></div>
+      
+<div class="norm-info">Норма: <b>0,7 – 1,0</b>. Ниже 0,7 — затруднения с обязательствами</div>
+    </div>
+
+    
+<div class="card card-liquidity" data-key="absolute_ratio" data-min="0.2" data-max="0.5">
+      
+<div class="card-title">Коэффициент абсолютной ликвидности</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 26%; right: 33%;"></div></div>
+      
+<div class="indicator-labels"><span>0</span><span>0,2</span><span>0,5</span><span>0,75+</span></div>
+      
+<div class="norm-info">Норма: <b>0,2 – 0,5</b>. Ниже 0,2 — дефицит ликвидных активов</div>
+    </div>
+
+  </div>
+
+  
+<h2 class="section-title">Коэффициенты рентабельности</h2>
+  
+<div class="cards-grid">
+
+    
+<div class="card card-profit" data-key="operating" data-min="10" data-max="30" data-unit="%">
+      
+<div class="card-title">Рентабельность основной деятельности</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 22%; right: 33%;"></div></div>
+      
+<div class="indicator-labels"><span>0%</span><span>10%</span><span>30%</span><span>45%+</span></div>
+      
+<div class="norm-info">Норма: <b>10% – 30%</b>. Окупаемость издержек основной деятельности</div>
+    </div>
+
+    
+<div class="card card-profit" data-key="ros" data-min="10" data-max="20" data-unit="%">
+      
+<div class="card-title">Рентабельность продаж (ROS)</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 33%; right: 33%;"></div></div>
+      
+<div class="indicator-labels"><span>0%</span><span>10%</span><span>20%</span><span>30%+</span></div>
+      
+<div class="norm-info">Норма для промышленности: <b>10% – 20%</b></div>
+    </div>
+
+    
+<div class="card card-profit" data-key="roe" data-min="15" data-max="40" data-unit="%">
+      
+<div class="card-title">Рентабельность капитала (ROE)</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 25%; right: 33%;"></div></div>
+      
+<div class="indicator-labels"><span>0%</span><span>15%</span><span>40%</span><span>60%+</span></div>
+      
+<div class="norm-info">Норма: <b>выше ставки депозита</b> (~15%+)</div>
+    </div>
+
+    
+<div class="card card-profit" data-key="roa" data-min="5" data-max="20" data-unit="%">
+      
+<div class="card-title">Рентабельность активов (ROA)</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 17%; right: 33%;"></div></div>
+      
+<div class="indicator-labels"><span>0%</span><span>5%</span><span>20%</span><span>30%+</span></div>
+      
+<div class="norm-info">Норма: <b>5% – 20%</b>. Общая эффективность использования имущества</div>
+    </div>
+
+    
+<div class="card card-profit" data-key="rca" data-min="10" data-max="40" data-unit="%">
+      
+<div class="card-title">Рентабельность оборотных средств</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 17%; right: 33%;"></div></div>
+      
+<div class="indicator-labels"><span>0%</span><span>10%</span><span>40%</span><span>60%+</span></div>
+      
+<div class="norm-info">Норма: <b>10% – 40%</b>. Эффективность управления оборотным капиталом</div>
+    </div>
+
+    
+<div class="card card-profit" data-key="rnca" data-min="8" data-max="25" data-unit="%">
+      
+<div class="card-title">Рентабельность внеоборотных средств</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 21%; right: 33%;"></div></div>
+      
+<div class="indicator-labels"><span>0%</span><span>8%</span><span>25%</span><span>38%+</span></div>
+      
+<div class="norm-info">Норма: <b>8% – 25%</b>. Отдача от долгосрочных инвестиций</div>
+    </div>
+
+    
+<div class="card card-profit" data-key="fixed_assets" data-min="10" data-max="30" data-unit="%">
+      
+<div class="card-title">Фондорентабельность</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 22%; right: 33%;"></div></div>
+      
+<div class="indicator-labels"><span>0%</span><span>10%</span><span>30%</span><span>45%+</span></div>
+      
+<div class="norm-info">Норма: <b>10% – 30%</b>. Эффективность основных производственных фондов</div>
+    </div>
+
+  </div>
+
+  
+<h2 class="section-title">Гостиничный бизнес</h2>
+  
+<div class="cards-grid">
+
+    
+<div class="card card-hotel" data-key="occupancy" data-min="60" data-max="85" data-unit="%">
+      
+<div class="card-title">Загрузка номерного фонда (Occupancy)</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 47%; right: 13%;"></div></div>
+      
+<div class="indicator-labels"><span>0%</span><span>60%</span><span>85%</span><span>100%</span></div>
+      
+<div class="norm-info">Норма: <b>60% – 85%</b>. Ниже 50% — критично, выше 80% — отлично</div>
+    </div>
+
+    
+<div class="card card-hotel" data-key="alos" data-min="5" data-max="7" data-unit=" ноч." data-scale-max="14">
+      
+<div class="card-title">Среднее время пребывания (ALOS)</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 36%; right: 14%;"></div></div>
+      
+<div class="indicator-labels"><span>0</span><span>5</span><span>7</span><span>14+</span></div>
+      
+<div class="norm-info">Курорт: норма <b>5 – 7</b> ночей. 2–3 ночи — низкая оценка (~0,3). Бизнес-отель: 1,5–2,5</div>
+    </div>
+
+    
+<div class="card card-hotel" data-key="revpag" data-min="3000" data-max="8000" data-unit=" ₽">
+      
+<div class="card-title">Выручка на гостя (RevPAG)</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 25%; right: 33%;"></div></div>
+      
+<div class="indicator-labels"><span>0 ₽</span><span>3000</span><span>8000</span><span>12000+</span></div>
+      
+<div class="norm-info">Зависит от категории отеля. Оценка относительно базовой нормы</div>
+    </div>
+
+    
+<div class="card card-hotel" data-key="adr" data-min="2500" data-max="6000" data-unit=" ₽">
+      
+<div class="card-title">Средняя цена номера (ADR)</div>
+      
+<div class="value-row">
+        
+<div class="actual-value empty">нет данных</div>
+        
+<div class="score-badge score-na"><span class="score-label">Оценка</span><span class="score-num">—</span></div>
+      </div>
+      
+<div class="indicator-bar">
+<div class="indicator-zone" style="left: 28%; right: 33%;"></div></div>
+      
+<div class="indicator-labels"><span>0 ₽</span><span>2500</span><span>6000</span><span>9000+</span></div>
+      
+<div class="norm-info">Среднесуточная стоимость номера. Динамическое ценообразование</div>
+    </div>
+
+  </div>
+
+  
+<div class="updated-info" id="updated-info">Ожидание данных из 1С...</div>
+
+</div>
+
+<script>
+window.onerror = function(msg, url, line) {
+    alert('JS ОШИБКА: ' + msg + ' (строка ' + line + ')');
+    return false;
+};
+
+/**
+ * ALOS для курорта: оптимум 5–7 ночей.
+ * 2 ночи ≈ 0,30; 5–7 ≈ 0,85 (не 1,0 как у city-hotel 1,5–2,5).
+ */
+function рассчитатьОценкуALOS(значение) {
+    if (значение >= 5 && значение <= 7) return 0.85;
+    if (значение > 7 && значение <= 9) return 0.70;
+    if (значение >= 4 && значение < 5) return 0.55;
+    if (значение >= 3 && значение < 4) return 0.45;
+    if (значение >= 2 && значение < 3) return 0.30;
+    if (значение >= 1 && значение < 2) return 0.20;
+    if (значение > 9 && значение <= 14) return 0.60;
+    if (значение > 14) return 0.50;
+    return 0.15;
+}
+
+function рассчитатьОценку(значение, минНорма, максНорма, ключ) {
+    if (ключ === 'alos') {
+        return рассчитатьОценкуALOS(значение);
+    }
+    if (значение >= минНорма && значение <= максНорма) return 1.0;
+    if (значение < минНорма) {
+        if (значение < минНорма * 0.5) return 0;
+        if (значение < минНорма * 0.7) return 0.25;
+        return 0.5;
+    }
+    if (значение > максНорма) {
+        var критМакс = максНорма * 1.5;
+        if (значение > критМакс * 1.3) return 0.25;
+        if (значение > критМакс) return 0.5;
+        return 0.75;
+    }
+    return 0.5;
+}
+
+function отобразитьЗначение(карточка, значение, единица) {
+    var элВалюты = карточка.querySelector('.actual-value');
+    if (!элВалюты) return;
+    элВалюты.className = 'actual-value';
+    var formatted = значение % 1 === 0 ? значение.toString() : значение.toFixed(2).replace('.', ',');
+    элВалюты.innerHTML = formatted + '<span class="unit">' + единица + '</span>';
+}
+
+function отобразитьОценку(карточка, оценка) {
+    var бейдж = карточка.querySelector('.score-badge');
+    if (!бейдж) return;
+    var num = бейдж.querySelector('.score-num');
+    бейдж.className = 'score-badge ' + классОценки(оценка);
+    if (num) num.textContent = оценка.toFixed(2);
+}
+
+function классОценки(оценка) {
+    if (оценка >= 0.9)  return 'score-100';
+    if (оценка >= 0.65) return 'score-75';
+    if (оценка >= 0.4)  return 'score-50';
+    if (оценка >= 0.15) return 'score-25';
+    return 'score-0';
+}
+
+function переместитьМаркер(карточка, значение, мин, макс) {
+    var бар = карточка.querySelector('.indicator-bar');
+    if (!бар) return;
+    var старыйМаркер = бар.querySelector('.indicator-marker');
+    if (старыйМаркер) бар.removeChild(старыйМаркер);
+    var максШкалы = parseFloat(карточка.getAttribute('data-scale-max'));
+    if (isNaN(максШкалы)) максШкалы = макс * 1.5;
+    var процент = (значение / максШкалы) * 100;
+    if (процент < 0) процент = 0;
+    if (процент > 100) процент = 100;
+    var маркер = document.createElement('div');
+    маркер.className = 'indicator-marker';
+    маркер.style.left = процент + '%';
+    бар.appendChild(маркер);
+}
+
+function рассчитатьИтог(оценки) {
+    var сумма = 0;
+    for (var i = 0; i < оценки.length; i++) сумма += оценки[i];
+    var среднее = сумма / оценки.length;
+
+    var круг = document.getElementById('total-circle');
+    var вал = document.getElementById('total-value');
+    var лбл = document.getElementById('total-label');
+    var комм = document.getElementById('total-comment');
+
+    if (вал) вал.textContent = среднее.toFixed(2);
+
+    var цвет, текст, описание;
+    if (среднее >= 0.9) {
+        цвет = '#10b981';
+        текст = 'Отлично';
+        описание = 'Финансовое положение предприятия отличное. Все ключевые показатели в норме.';
+    } else if (среднее >= 0.65) {
+        цвет = '#22c55e';
+        текст = 'Хорошо';
+        описание = 'Финансовое положение хорошее. Большинство показателей в пределах нормы.';
+    } else if (среднее >= 0.4) {
+        цвет = '#eab308';
+        текст = 'Нормально';
+        описание = 'Финансовое положение удовлетворительное. Требуется внимание к отдельным показателям.';
+    } else if (среднее >= 0.15) {
+        цвет = '#f97316';
+        текст = 'Плохо';
+        описание = 'Финансовое положение неустойчивое. Необходимы корректирующие меры.';
+    } else {
+        цвет = '#ef4444';
+        текст = 'Очень плохо';
+        описание = 'Критическое финансовое положение. Требуются срочные управленческие решения.';
+    }
+
+    if (круг) круг.style.background = цвет;
+    if (лбл) лбл.textContent = текст;
+    if (комм) комм.textContent = описание;
+}
+
+function загрузитьДанные(данные) {
+    if (данные.org) {
+        var orgEl = document.getElementById('org-name');
+        if (orgEl) orgEl.textContent = данные.org;
+    }
+    if (данные.period) {
+        var perEl = document.getElementById('period');
+        if (perEl) perEl.textContent = данные.period;
+    }
+
+    var оценки = [];
+    var карточки = document.querySelectorAll('.card[data-key]');
+
+    for (var i = 0; i < карточки.length; i++) {
+        var карточка = карточки[i];
+        var ключ = карточка.getAttribute('data-key');
+        var значение = данные[ключ];
+
+        if (значение === undefined || значение === null || значение === '') continue;
+
+        значение = parseFloat(значение);
+        if (isNaN(значение)) continue;
+
+        var мин = parseFloat(карточка.getAttribute('data-min'));
+        var макс = parseFloat(карточка.getAttribute('data-max'));
+        var единица = карточка.getAttribute('data-unit') || '';
+
+        var оценка = рассчитатьОценку(значение, мин, макс, ключ);
+        оценки.push(оценка);
+
+        отобразитьЗначение(карточка, значение, единица);
+        отобразитьОценку(карточка, оценка);
+        переместитьМаркер(карточка, значение, мин, макс);
+    }
+
+    if (оценки.length > 0) рассчитатьИтог(оценки);
+
+    var сейчас = new Date();
+    var updEl = document.getElementById('updated-info');
+    if (updEl) updEl.textContent = 'Данные обновлены: ' + сейчас.toLocaleString('ru-RU');
+}
+
+/* Тест в браузере: раскомментируйте
+загрузитьДанные({
+  org: 'ООО СМК "ВЫСОТА"',
+  period: 'Июнь 2026',
+  alos: 2,
+  occupancy: 72,
+  roa: 12
+});
+*/
+</script></body></html>

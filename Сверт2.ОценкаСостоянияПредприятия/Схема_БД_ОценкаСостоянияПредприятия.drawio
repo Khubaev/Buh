@@ -1,0 +1,556 @@
+<mxfile host="app.diagrams.net" agent="Cursor" version="24.0.0">
+  <diagram id="er-diagram" name="Схема БД">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="Расширение: Оценка состояния предприятия — связи с кардинальностью (1:1, 1:N, N:1, M:N)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="10" width="1200" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- СПРАВОЧНИКИ -->
+        <mxCell id="grp-cat" value="Справочники" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="50" width="120" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="org" value="Справочник.Организации&#xa;(из базы Бухгалтерия)" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;resizeParent=1;resizeParentMax=0;collapsible=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="220" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="org-f1" value="Ссылка (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="org">
+          <mxGeometry y="30" width="220" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="org-f2" value="Код, Наименование" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="org">
+          <mxGeometry y="50" width="220" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pok" value="Справочник.Показатели" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;resizeParent=1;resizeParentMax=0;collapsible=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="80" width="240" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="pok-f1" value="Ссылка (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="pok">
+          <mxGeometry y="30" width="240" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="pok-f2" value="Код, Наименование" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="pok">
+          <mxGeometry y="50" width="240" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="pok-f3" value="СтрокиБаланса" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="pok">
+          <mxGeometry y="70" width="240" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="pok-f4" value="КодFireBird" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;fontStyle=2" vertex="1" parent="pok">
+          <mxGeometry y="90" width="240" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="pok-f5" value="Формула" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="pok">
+          <mxGeometry y="110" width="240" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="oba" value="Справочник.ОценкиБА (иерархия)" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;resizeParent=1;resizeParentMax=0;collapsible=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="80" width="260" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="oba-f1" value="Ссылка (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="oba">
+          <mxGeometry y="30" width="260" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="oba-f2" value="Родитель (FK → ОценкиБА)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="oba">
+          <mxGeometry y="50" width="260" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="oba-f3" value="Код, Наименование" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;fontStyle=2" vertex="1" parent="oba">
+          <mxGeometry y="70" width="260" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="oba-f4" value="ОсновнойПоказатель (Булево)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="oba">
+          <mxGeometry y="90" width="260" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="oba-f5" value="ВыводитьВОтчет (Булево)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="oba">
+          <mxGeometry y="110" width="260" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="oba-f6" value="НомерПоПорядку" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="oba">
+          <mxGeometry y="130" width="260" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- ОценкиБА самоссылка 1:N -->
+        <mxCell id="e-oba-self" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;fontSize=10;" edge="1" parent="1" source="oba" target="oba">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="130"/>
+              <mxPoint x="920" y="200"/>
+              <mxPoint x="750" y="200"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-oba-self-lbl" value="Родитель&#xa;1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-oba-self">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint x="15" y="-15" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-oba-self-src" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-oba-self">
+          <mxGeometry x="-0.7" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-oba-self-tgt" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-oba-self">
+          <mxGeometry x="0.7" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Показатели ↔ ОценкиБА логическая 1:1 -->
+        <mxCell id="e-pok-oba" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;dashPattern=8 4;endArrow=ERone;startArrow=ERone;endFill=0;startFill=0;fontSize=10;" edge="1" parent="1" source="pok" target="oba">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-pok-oba-lbl" value="КодFireBird = Код&#xa;1 : 1 (логическая)" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#666666;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-pok-oba">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint y="-12" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ДОКУМЕНТ -->
+        <mxCell id="grp-doc" value="Документ" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="120" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="doc" value="Документ.ПоказателиАналитики" style="swimlane;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;align=center;resizeParent=1;resizeParentMax=0;collapsible=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="310" width="280" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="doc-f1" value="Ссылка (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="doc">
+          <mxGeometry y="30" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="doc-f2" value="Номер, Дата" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="doc">
+          <mxGeometry y="50" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="doc-f3" value="Организация (FK → Организации)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="doc">
+          <mxGeometry y="70" width="280" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="doc-ts" value="ТЧ.Показатели" style="swimlane;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;align=center;resizeParent=1;resizeParentMax=0;collapsible=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="310" width="280" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="doc-ts-f1" value="Ссылка (FK → Документ)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="doc-ts">
+          <mxGeometry y="30" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="doc-ts-f2" value="Показатель (FK → Показатели)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="doc-ts">
+          <mxGeometry y="50" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="doc-ts-f3" value="Формула, Сумма" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="doc-ts">
+          <mxGeometry y="70" width="280" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Организации → Документ 1:N -->
+        <mxCell id="e-org-doc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="org" target="doc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-org-doc-lbl" value="Организация&#xa;1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-org-doc">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint x="-20" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-org-doc-src" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-org-doc">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-org-doc-tgt" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-org-doc">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Документ → ТЧ 1:N -->
+        <mxCell id="e-doc-ts" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="doc" target="doc-ts">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-doc-ts-lbl" value="содержит&#xa;1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-doc-ts">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-10" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-doc-ts-src" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-doc-ts">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-doc-ts-tgt" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-doc-ts">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Показатели → ТЧ M:N (через строки) -->
+        <mxCell id="e-pok-ts" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;endArrow=ERmany;startArrow=ERmany;endFill=0;startFill=0;" edge="1" parent="1" source="pok" target="doc-ts">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-pok-ts-lbl" value="Показатель&#xa;M : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-pok-ts">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-pok-ts-src" value="M" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-pok-ts">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-pok-ts-tgt" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-pok-ts">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- РЕГИСТРЫ -->
+        <mxCell id="grp-reg" value="Регистры сведений" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="160" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rs1" value="РС.ПоказателяДляОценкиСостояния&#xa;(периодичность: Месяц)" style="swimlane;startSize=40;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;align=center;resizeParent=1;resizeParentMax=0;collapsible=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="490" width="300" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs1-f1" value="Период (PK, Месяц)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="rs1">
+          <mxGeometry y="40" width="300" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs1-f2" value="Регистратор (FK → ПоказателиАналитики)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="rs1">
+          <mxGeometry y="60" width="300" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs1-f3" value="Организация (FK → Организации)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="rs1">
+          <mxGeometry y="80" width="300" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs1-f4" value="Показатель (FK → Показатели)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="rs1">
+          <mxGeometry y="100" width="300" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs1-f5" value="Сумма (ресурс)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;fontStyle=2" vertex="1" parent="rs1">
+          <mxGeometry y="120" width="300" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rs2" value="РС.ПоказателиДляОтчета&#xa;(периодичность: Месяц)" style="swimlane;startSize=40;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;align=center;resizeParent=1;resizeParentMax=0;collapsible=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="490" width="300" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs2-f1" value="Период (PK, Месяц)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="rs2">
+          <mxGeometry y="40" width="300" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs2-f2" value="Организация (FK → Организации)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="rs2">
+          <mxGeometry y="60" width="300" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs2-f3" value="Показатель (FK → ОценкиБА)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="rs2">
+          <mxGeometry y="80" width="300" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs2-f4" value="Оценка (ресурс)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;fontStyle=2" vertex="1" parent="rs2">
+          <mxGeometry y="100" width="300" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rs3" value="РС.НастройкиИнтеграции&#xa;(без измерений)" style="swimlane;startSize=40;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;align=center;resizeParent=1;resizeParentMax=0;collapsible=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="490" width="280" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs3-f1" value="ПутьДоБазы" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="rs3">
+          <mxGeometry y="40" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs3-f2" value="Пароль, ГУИД" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="rs3">
+          <mxGeometry y="60" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs3-f3" value="ДрайверКлиента" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="rs3">
+          <mxGeometry y="80" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs3-f4" value="Кодировка" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="rs3">
+          <mxGeometry y="100" width="280" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Документ → РС1 регистратор 1:N -->
+        <mxCell id="e-doc-rs1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="doc" target="rs1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-doc-rs1-lbl" value="регистратор&#xa;1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-doc-rs1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="25" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-doc-rs1-src" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-doc-rs1">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-doc-rs1-tgt" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-doc-rs1">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Организации → РС1 1:N -->
+        <mxCell id="e-org-rs1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="org" target="rs1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="125"/>
+              <mxPoint x="20" y="565"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-org-rs1-lbl" value="1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-org-rs1">
+          <mxGeometry x="-0.3" relative="1" as="geometry">
+            <mxPoint x="-10" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Показатели → РС1 1:N -->
+        <mxCell id="e-pok-rs1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="pok" target="rs1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="230"/>
+              <mxPoint x="190" y="230"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-pok-rs1-lbl" value="1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-pok-rs1">
+          <mxGeometry x="0.2" relative="1" as="geometry">
+            <mxPoint y="-8" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Организации → РС2 1:N -->
+        <mxCell id="e-org-rs2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="org" target="rs2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="450"/>
+              <mxPoint x="550" y="450"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-org-rs2-lbl" value="1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-org-rs2">
+          <mxGeometry x="0.1" relative="1" as="geometry">
+            <mxPoint y="-8" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ОценкиБА → РС2 1:N -->
+        <mxCell id="e-oba-rs2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="oba" target="rs2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="750" y="280"/>
+              <mxPoint x="750" y="470"/>
+              <mxPoint x="550" y="470"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-oba-rs2-lbl" value="1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-oba-rs2">
+          <mxGeometry x="0.2" relative="1" as="geometry">
+            <mxPoint y="-8" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ВНЕШНИЕ ИСТОЧНИКИ -->
+        <mxCell id="grp-ext" value="Внешние источники (не 1С)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="220" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ext1" value="РегистрБухгалтерии.Хозрасчетный&#xa;(база Бухгалтерия)" style="swimlane;startSize=40;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;align=center;resizeParent=1;resizeParentMax=0;collapsible=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="710" width="280" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="ext1-f1" value="Организация, Счет" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="ext1">
+          <mxGeometry y="40" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ext1-f2" value="Остатки, Обороты" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="ext1">
+          <mxGeometry y="60" width="280" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ext2" value="Firebird: USLI_VAL&#xa;(внешняя БД)" style="swimlane;startSize=40;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;align=center;resizeParent=1;resizeParentMax=0;collapsible=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="710" width="280" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="ext2-f1" value="ID (код показателя)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="ext2">
+          <mxGeometry y="40" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ext2-f2" value="Значение, Период" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;fontSize=11;" vertex="1" parent="ext2">
+          <mxGeometry y="60" width="280" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- ОБРАБОТКИ -->
+        <mxCell id="grp-proc" value="Обработки и отчёты" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="860" width="160" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="proc1" value="Обработка&#xa;РасчетОборотныхПоказателей" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="890" width="220" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="proc2" value="Обработка&#xa;ИнтеграцияБизнесАналитик" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="890" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rep1" value="Отчёт&#xa;ДинамикаПоказателейДляОтчета" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="890" width="240" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Хозрасчетный → proc1 1:N чтение -->
+        <mxCell id="e-ext1-proc1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;dashed=1;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="ext1" target="proc1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-ext1-proc1-lbl" value="чтение&#xa;1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-ext1-proc1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- proc1 → doc 1:1 заполнение -->
+        <mxCell id="e-proc1-doc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673a6;dashed=1;endArrow=ERone;startArrow=ERone;endFill=0;startFill=0;" edge="1" parent="1" source="proc1" target="doc">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="870"/>
+              <mxPoint x="180" y="870"/>
+              <mxPoint x="180" y="420"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-proc1-doc-lbl" value="заполнение ТЧ&#xa;1 : 1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-proc1-doc">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="20" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Настройки → proc2 1:1 -->
+        <mxCell id="e-rs3-proc2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d6b656;endArrow=ERone;startArrow=ERone;endFill=0;startFill=0;" edge="1" parent="1" source="rs3" target="proc2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="660"/>
+              <mxPoint x="500" y="660"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-rs3-proc2-lbl" value="настройки ODBC&#xa;1 : 1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-rs3-proc2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-10" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Firebird → proc2 1:N -->
+        <mxCell id="e-ext2-proc2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;dashed=1;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="ext2" target="proc2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-ext2-proc2-lbl" value="загрузка&#xa;1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-ext2-proc2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- doc → proc2 N:1 основание -->
+        <mxCell id="e-doc-proc2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;dashed=1;endArrow=ERone;startArrow=ERoneToMany;endFill=0;startFill=1;" edge="1" parent="1" source="doc" target="proc2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="430"/>
+              <mxPoint x="500" y="430"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-doc-proc2-lbl" value="Основание (форма)&#xa;N : 1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-doc-proc2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-10" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- proc2 → rs2 1:N запись -->
+        <mxCell id="e-proc2-rs2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d6b656;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="proc2" target="rs2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-proc2-rs2-lbl" value="запись оценок&#xa;1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-proc2-rs2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- rs2 → rep1 1:N чтение -->
+        <mxCell id="e-rs2-rep1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673a6;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="rs2" target="rep1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="660"/>
+              <mxPoint x="880" y="660"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-rs2-rep1-lbl" value="чтение&#xa;1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-rs2-rep1">
+          <mxGeometry x="0.1" relative="1" as="geometry">
+            <mxPoint y="-8" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ОценкиБА → rep1 1:N -->
+        <mxCell id="e-oba-rep1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;endArrow=ERoneToMany;startArrow=ERone;endFill=1;startFill=0;" edge="1" parent="1" source="oba" target="rep1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="165"/>
+              <mxPoint x="1100" y="165"/>
+              <mxPoint x="1100" y="920"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-oba-rep1-lbl" value="иерархия&#xa;1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="e-oba-rep1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ЛЕГЕНДА -->
+        <mxCell id="legend" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;spacingLeft=10;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="80" width="320" height="310" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg-title" value="Легенда" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontStyle=1;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="5" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg1" value="" style="rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="30" width="20" height="14" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg1-t" value="Справочник" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" vertex="1" parent="legend">
+          <mxGeometry x="35" y="28" width="120" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg2" value="" style="rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="52" width="20" height="14" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg2-t" value="Документ / ТЧ" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" vertex="1" parent="legend">
+          <mxGeometry x="35" y="50" width="120" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg3" value="" style="rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="74" width="20" height="14" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg3-t" value="Регистр сведений" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" vertex="1" parent="legend">
+          <mxGeometry x="35" y="72" width="140" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg4" value="" style="rounded=0;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="96" width="20" height="14" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg4-t" value="Внешний источник" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" vertex="1" parent="legend">
+          <mxGeometry x="35" y="94" width="140" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg5" value="" style="rounded=0;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="118" width="20" height="14" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg5-t" value="Обработка / Отчёт" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" vertex="1" parent="legend">
+          <mxGeometry x="35" y="116" width="140" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="leg-card-title" value="Кардинальность связей:" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontStyle=1;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="145" width="200" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg-c1" value="1 : 1 — один к одному" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="165" width="200" height="16" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg-c2" value="1 : N — один ко многим" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="183" width="200" height="16" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg-c3" value="N : 1 — многие к одному" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="201" width="200" height="16" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg-c4" value="M : N — многие ко многим" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="219" width="200" height="16" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg-c5" value="—— пунктир = логическая связь" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#666666;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="240" width="220" height="16" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg-c6" value="—|&lt;  = «один» (1)   —|&lt;|  = «много» (N)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#666666;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="260" width="280" height="16" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg-c7" value="Цифры 1/M/N на концах линий" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#666666;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="278" width="280" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- ТАБЛИЦА СВЯЗЕЙ -->
+        <mxCell id="rel-table" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="980" width="1380" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel-title" value="Таблица связей (кардинальность)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;" vertex="1" parent="rel-table">
+          <mxGeometry x="15" y="10" width="300" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel-hdr" value="&lt;table cellpadding=&quot;4&quot; cellspacing=&quot;0&quot; style=&quot;width:100%;font-size:11px;border-collapse:collapse;&quot;&gt;&lt;tr style=&quot;background:#e8e8e8;font-weight:bold;&quot;&gt;&lt;td&gt;От&lt;/td&gt;&lt;td&gt;К&lt;/td&gt;&lt;td&gt;Тип&lt;/td&gt;&lt;td&gt;Описание&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Организации&lt;/td&gt;&lt;td&gt;ПоказателиАналитики&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Одна организация — много документов&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ПоказателиАналитики&lt;/td&gt;&lt;td&gt;ТЧ.Показатели&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Один документ — много строк ТЧ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Показатели&lt;/td&gt;&lt;td&gt;ТЧ.Показатели&lt;/td&gt;&lt;td&gt;&lt;b&gt;M : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Один показатель в разных документах; строка ссылается на один показатель&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ПоказателиАналитики&lt;/td&gt;&lt;td&gt;ПоказателяДляОценкиСостояния&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Регистратор: один документ — много движений (по показателям)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Организации&lt;/td&gt;&lt;td&gt;ПоказателяДляОценкиСостояния&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Одна организация — много записей регистра&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Показатели&lt;/td&gt;&lt;td&gt;ПоказателяДляОценкиСостояния&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Один показатель — много записей (по периодам/организациям)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Организации&lt;/td&gt;&lt;td&gt;ПоказателиДляОтчета&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Одна организация — много оценок по месяцам&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ОценкиБА&lt;/td&gt;&lt;td&gt;ПоказателиДляОтчета&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Один показатель БА — много записей (по периодам)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ОценкиБА&lt;/td&gt;&lt;td&gt;ОценкиБА (Родитель)&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Иерархия: один родитель — много дочерних элементов&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Показатели&lt;/td&gt;&lt;td&gt;ОценкиБА&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : 1&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Логическая связь по КодFireBird = Код (не FK в метаданных)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;НастройкиИнтеграции&lt;/td&gt;&lt;td&gt;ИнтеграцияБизнесАналитик&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : 1&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Одна запись настроек подключения к Firebird&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ПоказателиАналитики&lt;/td&gt;&lt;td&gt;ИнтеграцияБизнесАналитик&lt;/td&gt;&lt;td&gt;&lt;b&gt;N : 1&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Много документов, форма открывается с одним Основанием&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;РасчетОборотныхПоказателей&lt;/td&gt;&lt;td&gt;ПоказателиАналитики&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : 1&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Заполнение одного документа при расчёте&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Хозрасчетный&lt;/td&gt;&lt;td&gt;РасчетОборотныхПоказателей&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Чтение множества проводок/остатков&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Firebird USLI_VAL&lt;/td&gt;&lt;td&gt;ИнтеграцияБизнесАналитик&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Загрузка множества значений показателей&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ИнтеграцияБизнесАналитик&lt;/td&gt;&lt;td&gt;ПоказателиДляОтчета&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Запись множества оценок в регистр&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ПоказателиДляОтчета&lt;/td&gt;&lt;td&gt;ДинамикаПоказателей&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Отчёт читает множество записей регистра&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ОценкиБА&lt;/td&gt;&lt;td&gt;ДинамикаПоказателей&lt;/td&gt;&lt;td&gt;&lt;b&gt;1 : N&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Иерархия показателей для построения дерева отчёта&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;overflow=fill;" vertex="1" parent="rel-table">
+          <mxGeometry x="15" y="35" width="1350" height="235" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
