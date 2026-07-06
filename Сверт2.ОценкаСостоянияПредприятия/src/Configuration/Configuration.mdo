@@ -77,6 +77,7 @@
   <dataProcessors>DataProcessor.ЗагрузкаСветлячокTLПроживание</dataProcessors>
   <dataProcessors>DataProcessor.Распознавание_Высота</dataProcessors>
   <dataProcessors>DataProcessor.Entera_ЗагрузкаДокументов</dataProcessors>
+  <dataProcessors>DataProcessor.дляТестовогоEDT</dataProcessors>
   <informationRegisters>InformationRegister.ПоказателяДляОценкиСостояния</informationRegisters>
   <informationRegisters>InformationRegister.ПоказателиДляОтчета</informationRegisters>
   <informationRegisters>InformationRegister.НастройкиИнтеграции</informationRegisters>

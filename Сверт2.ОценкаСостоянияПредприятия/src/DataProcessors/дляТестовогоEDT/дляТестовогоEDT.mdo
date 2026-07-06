@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d720f186-c0fc-4327-b4cf-45eeaab716f3">
+  <producedTypes>
+    <objectType typeId="4e9158cc-1615-4d83-b2ff-ff7e0fe8e89d" valueTypeId="25a217bb-2c60-4e9a-8a5d-41c53c3f8e2e"/>
+    <managerType typeId="8d88bb44-0287-43a4-9e90-530600ad3202" valueTypeId="dc37f72d-918b-4c39-8029-23e1274b13be"/>
+  </producedTypes>
+  <name>дляТестовогоEDT</name>
+  <synonym>
+    <key>ru</key>
+    <value>Для тестового EDT</value>
+  </synonym>
+  <comment>Тестовая обработка для проверки работы в 1C:EDT.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.дляТестовогоEDT.Form.Форма</defaultForm>
+  <forms uuid="4c3ebffc-bddd-4285-bca7-76b25fadc4be">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>
