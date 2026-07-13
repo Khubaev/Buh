@@ -469,6 +469,32 @@
             <representationInContextMenu>Auto</representationInContextMenu>
             <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
           </items>
+          <items xsi:type="form:Button">
+            <name>ОтправитьНаРаспознавание</name>
+            <id>90003</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>ОтправитьНаРаспознаваниеРасширеннаяПодсказка</name>
+              <id>90004</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <commandName>Form.Command.ОтправитьНаРаспознавание</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+            <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
+          </items>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -5332,6 +5358,18 @@
         <name>Расш3_СчетаЗатратДляВсех</name>
       </handler>
     </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ОтправитьНаРаспознавание</name>
+    <title>
+      <key>ru</key>
+      <value>Отправить на распознавание</value>
+    </title>
+    <id>1000001</id>
+    <use>
+      <common>true</common>
+    </use>
     <currentRowUse>Auto</currentRowUse>
   </formCommands>
   <commandInterface>
