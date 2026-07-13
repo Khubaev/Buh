@@ -2921,6 +2921,40 @@
     </edit>
   </attributes>
   <attributes>
+    <name>АвтоОтправитьПослеОткрытия</name>
+    <title>
+      <key>ru</key>
+      <value>Автоотправка после открытия</value>
+    </title>
+    <id>37</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ЗагрузкаФайловИзДокумента</name>
+    <title>
+      <key>ru</key>
+      <value>Загрузка файлов из документа</value>
+    </title>
+    <id>38</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
     <name>ПоследнийАдресПоказанногоРезультата</name>
     <title>
       <key>ru</key>
