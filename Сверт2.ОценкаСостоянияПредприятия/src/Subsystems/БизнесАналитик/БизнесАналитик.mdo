@@ -17,7 +17,6 @@
   <content>Report.ОценкаЛиквидности</content>
   <content>Report.ОценкаРентабельности</content>
   <content>Report.ОценкаПараметраУправления</content>
-  <content>Report.СверкаОСВ10ИМПЗНаСкладах</content>
   <subsystems>Справочники</subsystems>
   <subsystems>Документы</subsystems>
   <subsystems>Настройки</subsystems>

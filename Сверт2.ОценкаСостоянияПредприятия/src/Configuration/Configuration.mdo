@@ -57,9 +57,9 @@
   <commonPictures>CommonPicture.Видеоинструкция</commonPictures>
   <commonPictures>CommonPicture.Пустая</commonPictures>
   <commonPictures>CommonPicture.ОценкаСостоянияКурорта</commonPictures>
-  <commonModules>CommonModule.Расш3_РаспознаваниеВысота</commonModules>
   <roles>Role.Расш3_ОсновнаяРоль</roles>
   <roles>Role.БизнесАналитик</roles>
+  <commonModules>CommonModule.Расш3_РаспознаваниеВысота</commonModules>
   <catalogs>Catalog.Показатели</catalogs>
   <catalogs>Catalog.Организации</catalogs>
   <catalogs>Catalog.ОценкиБА</catalogs>
@@ -67,12 +67,12 @@
   <catalogs>Catalog.Номенклатура</catalogs>
   <documents>Document.ПоказателиАналитики</documents>
   <documents>Document.ПоступлениеТоваровУслуг</documents>
+  <documents>Document.АвансовыйОтчет</documents>
   <enums>Enum.ОтражениеВУСН</enums>
   <reports>Report.ДинамикаПоказателейДляОтчета</reports>
   <reports>Report.ОценкаЛиквидности</reports>
   <reports>Report.ОценкаРентабельности</reports>
   <reports>Report.ОценкаПараметраУправления</reports>
-  <reports>Report.СверкаОСВ10ИМПЗНаСкладах</reports>
   <dataProcessors>DataProcessor.ИнтеграцияБизнесАналитик</dataProcessors>
   <dataProcessors>DataProcessor.ОценкаСостоянияПредприятия_РасчетОборотныхПоказателей</dataProcessors>
   <dataProcessors>DataProcessor.ЗагрузкаСветлячокTLПроживание</dataProcessors>
